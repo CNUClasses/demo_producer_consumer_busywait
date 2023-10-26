@@ -6,7 +6,8 @@
 #include <chrono>
 #include <atomic>
 using namespace std;
-
+//use to force failures
+//std::this_thread::sleep_for(std::chrono::milliseconds(2));
 int bal=0;
 
 void deposit(int id,int numbdeposits, int amt){
