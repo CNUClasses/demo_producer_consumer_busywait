@@ -6,9 +6,11 @@
 #include <chrono>
 #include <atomic>
 using namespace std;
+
 //use to force failures
 //std::this_thread::sleep_for(std::chrono::milliseconds(2));
-int bal=0;
+
+int bal=0;	//bank balance
 
 void deposit(int id,int numbdeposits, int amt){
 	while(numbdeposits>0){
@@ -26,6 +28,9 @@ void withdraw(int id,int amt ){
 }
 
 int main() {
+	//make a bunch of deposits, and withdrawels
+	//without overdrafting, but keep withdrawing until
+	//bal is 0
 	thread t1(deposit,1,100,1);
 	thread t2(withdraw,2,1);
 
